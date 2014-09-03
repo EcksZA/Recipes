@@ -1,0 +1,19 @@
+<% content_for(:title, 'Add Contribution | Recipes') %>
+
+<h1>Add A New Recipe</h1>
+
+<% if @contributor.errors.any? %>
+  <% @contributor.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<form action="/contributors" method='post' id='contribution_new'>
+  <label for='contribution_title'>Recipe Title</label>
+  <input id='contribution_title' name='contribution[title]' type='text' value='<%= @contribution.title %>'>
+  <label for='contribution_name'>Author Name</label>
+  <input id='contribution_name' name='contribution[name]' type='text' value='<%= @contribution.name %>'>
+  <button>Submit Your Recipe</button>
+</form>
+
+<textarea form='contribution_new' name='contribution[recipe]'></textarea>

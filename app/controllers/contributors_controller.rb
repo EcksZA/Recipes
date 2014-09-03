@@ -8,4 +8,9 @@ class ContributorsController < ApplicationController
     @contributor = Contributor.find(params[:id])
     render('contributors/show.html.erb')
   end
+
+  def new
+    @contributor = Contributor.new
+    render('contributors/new.html.erb')
+  end
 end
