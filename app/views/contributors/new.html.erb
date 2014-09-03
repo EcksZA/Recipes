@@ -8,12 +8,12 @@
   <% end %>
 <% end %>
 
-<form action="/contributors" method='post' id='contribution_new'>
-  <label for='contribution_title'>Recipe Title</label>
-  <input id='contribution_title' name='contribution[title]' type='text' value='<%= @contribution.title %>'>
-  <label for='contribution_name'>Author Name</label>
-  <input id='contribution_name' name='contribution[name]' type='text' value='<%= @contribution.name %>'>
+<form action="/contributors" method='post' id='contributor_new'>
+  <label for='contributor_title'>Recipe Title</label>
+  <input id='contributor_title' name='contributor[title]' type='text' value='<%= @contributor.title %>'>
+  <label for='contributor_name'>Author Name</label>
+  <input id='contributor_name' name='contributor[name]' type='text' value='<%= @contributor.name %>'>
   <button>Submit Your Recipe</button>
 </form>
 
-<textarea form='contribution_new' name='contribution[recipe]'></textarea>
+<textarea form='contributor_new' name='contributor[recipe]'></textarea>
