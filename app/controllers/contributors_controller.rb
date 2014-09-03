@@ -39,4 +39,11 @@ class ContributorsController < ApplicationController
       render('contributors/edit.html.erb')
     end
   end
+
+  def destroy
+    @contributor = Contributor.find(params[:id])
+    @contributor.destroy
+    flash[:notice] = "Your recipe was deleted!"
+    redirect_to("/contributors")
+  end
 end

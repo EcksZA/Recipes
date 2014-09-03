@@ -4,6 +4,8 @@
 
 <% @contributor.each do |contributor| %>
   <ul>
-    <li><%= contributor.title %></li>
+    <li><a href="/contributors/<%= contributor.id %>"><%= contributor.title %></li>
   </ul>
 <% end %>
+
+<p><a href="/contributors/new">Add a new recipe</a></p>
