@@ -16,8 +16,8 @@ class ContributorsController < ApplicationController
 
   def create
     @contributor = Contributor.new(params[:contributor])
-
     if @contributor.save
+      flash[:notice] = "Your recipe was added!"
       redirect_to("/contributors/#{@contributor.id}")
     else
       render('contributors/new.html.erb')
