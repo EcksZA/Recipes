@@ -1,0 +1,9 @@
+<% content_for(:title, 'Tags | Recipes') %>
+
+<h1>List of Tags</h1>
+
+<% @tag.each do |tag| %>
+  <ul>
+    <li><%= tag.name %></li>
+  </ul>
+<% end %>
