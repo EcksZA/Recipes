@@ -23,4 +23,9 @@ class ContributorsController < ApplicationController
       render('contributors/new.html.erb')
     end
   end
+
+  def edit
+    @contributor = Contributor.find(params[:id])
+    render('contributors/edit.html.erb')
+  end
 end

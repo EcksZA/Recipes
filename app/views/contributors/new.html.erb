@@ -2,19 +2,11 @@
 
 <h1>Add A New Recipe</h1>
 
-<% if @contributor.errors.any? %>
-  <% @contributor.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
+<%= render('layouts/errors', :object => @contributor) %>
 
 <form action="/contributors" method='post' id='contributor_new'>
-  <label for='contributor_title'>Recipe Title</label>
-  <input id='contributor_title' name='contributor[title]' type='text' value='<%= @contributor.title %>'>
-  <label for='contributor_name'>Author Name</label>
-  <input id='contributor_name' name='contributor[name]' type='text' value='<%= @contributor.name %>'>
-  <input type='hidden'>
+  <%= render('form') %>
   <button>Submit Your Recipe</button>
 </form>
 
-<textarea form='contributor_new' name='contributor[recipe]'></textarea>
+<%= render('textarea') %>
