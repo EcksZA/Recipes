@@ -2,3 +2,12 @@
 
 <h1>Edit The Recipe</h1>
 
+<%= render('layouts/errors', :object => @contributor) %>
+
+<form id='contributor' action="/contributors/<%= @contributor.id %>" method='post'>
+  <input name='_method' value='patch' type='hidden'>
+  <%= render('form') %>
+  <button>Edit your recipe</button>
+</form>
+
+<%= render('textarea') %>

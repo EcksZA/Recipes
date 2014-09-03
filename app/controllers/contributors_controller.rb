@@ -17,7 +17,7 @@ class ContributorsController < ApplicationController
   def create
     @contributor = Contributor.new(params[:contributor])
     if @contributor.save
-      flash[:notice] = "Your recipe was added!"
+      flash[:notice] = 'Your recipe was added!'
       redirect_to("/contributors/#{@contributor.id}")
     else
       render('contributors/new.html.erb')
@@ -27,5 +27,16 @@ class ContributorsController < ApplicationController
   def edit
     @contributor = Contributor.find(params[:id])
     render('contributors/edit.html.erb')
+  end
+
+  def update
+    @contributor = Contributor.find(params[:id])
+
+    if @contributor.update(params[:contributor])
+      flash[:notice] = 'Your recipe was edited!'
+      redirect_to("/contributors/#{@contributor.id}")
+    else
+      render('contributors/edit.html.erb')
+    end
   end
 end
