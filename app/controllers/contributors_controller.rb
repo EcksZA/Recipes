@@ -13,4 +13,14 @@ class ContributorsController < ApplicationController
     @contributor = Contributor.new
     render('contributors/new.html.erb')
   end
+
+  def create
+    @contributor = Contributor.new(params[:id])
+
+    if @contributor.save
+      redirect("/contributors/#{@contributor.id}")
+    else
+      render('contributors/edit')
+    end
+  end
 end
