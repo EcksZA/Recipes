@@ -8,4 +8,9 @@ class TagsController < ApplicationController
     @tag = Tag.find(parameters[:id])
     render('tags/show.html.erb')
   end
+
+  def new
+    @tag = Tag.new
+    render('tags/new.html.erb')
+  end
 end

@@ -1,0 +1,10 @@
+<% content_for(:title, 'Add Tag | Recipes') %>
+
+<h1>Add A New Tag</h1>
+
+<%= render('layouts/errors', :object => @tag) %>
+
+<form id='tag' action="/tags" method='post'>
+  <%= render('form') %>
+  <button>Create A Tag</button>
+</form>
