@@ -1,3 +1,3 @@
 class Contributor < ActiveRecord::Base
-  validates :name, :title, presence: true
+  validates :name, :title, :recipe, presence: true
 end
