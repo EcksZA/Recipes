@@ -9,3 +9,10 @@
   <%= render('form') %>
   <button>Edit Recipe</button>
 </form>
+
+<p><a href="/tags">Return to main menu</a></p>
+<p><a href="/tags/new">Create a new tag</a></p>
+<p><a href="/tags/<%= @tag.id %>"
+      data-confirm='Are you sure you want to delete this tag?'
+      data-method='delete'
+      rel='nofollow'>Delete this tag</a></p>

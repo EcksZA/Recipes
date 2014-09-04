@@ -4,6 +4,8 @@
 
 <% @tag.each do |tag| %>
   <ul>
-    <li><%= tag.name %></li>
+    <li><a href="/tags/<%= tag.id %>"><%= tag.name %></li>
   </ul>
 <% end %>
+
+<p><a href="/tags/new">Create a new tag</a></p>
