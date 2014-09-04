@@ -1,0 +1,11 @@
+<% content_for(:title, 'Edit | Recipes') %>
+
+<h1>Edit This Recipe</h1>
+
+<%= render('layouts/errors', :object => @tag) %>
+
+<form id='tag' action="/tags/<%= @tag.id %>" method='post'>
+  <input name='_method' type='hidden' value='patch'>
+  <%= render('form') %>
+  <button>Edit Recipe</button>
+</form>

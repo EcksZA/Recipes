@@ -23,4 +23,9 @@ class TagsController < ApplicationController
       render('tags/new.html.erb')
     end
   end
+
+  def edit
+    @tag = Tag.find(params[:id])
+    render('tags/edit.html.erb')
+  end
 end
