@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   match('/contributors/:id', {:via => :get, :to => 'contributors#show'})
   match('/contributors/:id/edit', {:via => :get, :to => 'contributors#edit'})
   match('/contributors/:id', {:via => [:patch, :post], :to => 'contributors#update'})
-  match('/contributors/destroy', {:via => :delete, :to => 'contributors#destroy'})
+  match('/contributors/:id', {:via => :delete, :to => 'contributors#destroy'})
 
   match('/tags', {:via => :get, :to => 'tags#index'})
   match('/tags', {:via => :post, :to => 'tags#create'})

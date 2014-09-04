@@ -13,4 +13,9 @@
 <%= render('textarea') %>
 
 <p><a href="/contributors/<%= @contributor.id %>">Return to recipe</a></p>
+<p><a href="/contributors/new">Add a new recipe</a></p>
 <p><a href="/contributors">Return to main menu</a></p>
+<p><a href="/contributors/<%= @contributor.id %>"
+      data-confirm='Are you sure you want to delete this recipe>'
+      data-method='delete'
+      rel='nofollow'>Delete this recipe</a></p>
