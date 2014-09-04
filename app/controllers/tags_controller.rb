@@ -13,4 +13,14 @@ class TagsController < ApplicationController
     @tag = Tag.new
     render('tags/new.html.erb')
   end
+
+  def create
+    @tag = Tag.new(params[:tag])
+    if @tag.save
+      flash[:notice] = 'You created a new tag!'
+      redirect_to("/tags")
+    else
+      render('tags/new.html.erb')
+    end
+  end
 end
