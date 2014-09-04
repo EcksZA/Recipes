@@ -5,7 +5,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @tag = Tag.find(parameters[:id])
+    @tag = Tag.find(params[:id])
     render('tags/show.html.erb')
   end
 
@@ -27,5 +27,15 @@ class TagsController < ApplicationController
   def edit
     @tag = Tag.find(params[:id])
     render('tags/edit.html.erb')
+  end
+
+  def update
+    @tag = Tag.find(params[:id])
+    if @tag.update(params[:tag])
+      flash[:notice] = "The recipe was updated!"
+      redirect_to("/tags/#{@tag.id}")
+    else
+      render('tags/edit.html.erb')
+    end
   end
 end
