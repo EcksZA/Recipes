@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   match('/tags/:id', {:via => [:patch, :put], :to => 'tags#update'})
   match('/tags/:id', {:via => :delete, :to => 'tags#destroy'})
 
-  match('/contributors/:id/new', {:via => :get, :to => 'taggables#new'})
+  match('/contributors/:id/tags', {:via => :get, :to => 'taggables#new'})
+  match('/contributors/:id/success', {:via => :post, :to => 'taggables#create'})
 end
