@@ -46,10 +46,4 @@ class ContributorsController < ApplicationController
     flash[:notice] = "Your recipe was deleted!"
     redirect_to("/contributors")
   end
-
-  def newtag
-    contributor = Contributor.find(params[:id])
-    @tag = contributer.tag.new
-    render('contributer/newtag.html.erb')
-  end
 end
