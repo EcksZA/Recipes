@@ -1,0 +1,22 @@
+<% content_for(:title, 'Add Tag | Recipes') %>
+
+<h1>Tag The Recipes</h1>
+
+<p><%= @contributor.title %></p>
+
+<p>Add a tag</p>
+
+<select form='taggable'>
+  <option value=''>Add a tag</option>
+  <% @tag.each do |tag| %>
+    <option value='<% tag.id %>'><%= tag.name %></option>
+  <% end %>
+</select>
+
+<form id='taggable' action="/contributors/:id" method='post' >
+  <input id='taggable_contributor' name='taggable[contributor_id]' type='hidden'>
+  <input id='taggable_tag' name='taggable[tag_id]' type='hidden'>
+  <button>Add tag</button>
+</form>
+
+
