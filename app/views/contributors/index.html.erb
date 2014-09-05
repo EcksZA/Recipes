@@ -4,9 +4,9 @@
 
 <% @contributors.each do |contributor| %>
   <ul>
-    <li><a href="/contributors/<%= contributor.id %>"><%= contributor.title %></li>
+    <li><a href="/contributors/<%= contributor.id %>"><%= contributor.title %></a></li>
     <% contributor.tags.each do |tag| %>
-      <p><%= tag.name %><p>
+      <p><a href="/tags/<%= tag.id %>"><%= tag.name %></a><p>
     <% end %>
   </ul>
 <% end %>
