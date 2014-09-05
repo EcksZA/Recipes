@@ -2,9 +2,12 @@
 
 <h1>Contributors Content</h1>
 
-<% @contributor.each do |contributor| %>
+<% @contributors.each do |contributor| %>
   <ul>
     <li><a href="/contributors/<%= contributor.id %>"><%= contributor.title %></li>
+    <% contributor.tags.each do |tag| %>
+      <p><%= tag.name %><p>
+    <% end %>
   </ul>
 <% end %>
 
