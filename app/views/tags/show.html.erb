@@ -4,6 +4,10 @@
 
 <p><%= @tag.name %></p>
 
+<% @tag.contributors.each do |contributor| %>
+  <p><a href="/contributors/<%= contributor.id %>"><%= contributor.title %></a><p>
+<% end %>
+
 <p><a href="/tags">Return to main menu</a></p>
 <p><a href="/tags/new">Create a new tag</a></p>
 <p><a href="/tags/<%= @tag.id %>/edit">Edit this tag</a></p>
